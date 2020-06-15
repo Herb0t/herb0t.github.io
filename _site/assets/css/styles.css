@@ -1,17 +1,29 @@
 html, body { margin: 0; height: 100%; }
 
-.current { color: green; }
+body { counter-reset: section; }
 
-.main-block { display: flex; min-height: 100%; max-width: 1375px; margin: auto; }
+.home-image { position: absolute; left: 0; top: 3rem; max-width: 420px; padding: 1rem; transition: left 2s; }
 
-.main-block .yellow-block { background: #d6fc64; width: 65%; box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.1); }
+.main-block { position: relative; display: flex; min-height: 100%; max-width: 1375px; margin: auto; }
+
+.main-block .yellow-block { background: #d6fc64; width: 15%; transition: width 2s; box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.1); }
 
 .main-block .blank-block { width: 30%; position: relative; }
 
-.main-block .menu-title { font-family: "Noto Sans", sans-serif; }
+.main-block .menu-title { font-family: "Noto Sans", sans-serif; font-size: 50px; }
 
 .main-block .nav-bar { position: absolute; bottom: 0; padding: 3rem; width: 100%; box-sizing: border-box; }
 
-.main-block .nav .nav-item { font-family: "Source Sans Pro", sans-serif; }
+.main-block .nav { list-style: none; }
+
+.main-block .nav .nav-item { position: relative; font-family: "Source Sans Pro", sans-serif; border-left: solid #d6fc64 5px; padding: 0.5rem 1rem 0 0.5rem; font-size: 20px; }
+
+.main-block .nav .nav-item:before { counter-increment: section; content: "0" counter(section); position: absolute; left: -35px; }
+
+.main-block .nav .nav-item a { text-decoration: none; color: #000; }
+
+@media only screen and (min-width: 768px) { .main-block .yellow-block { width: 65%; } }
+
+@media only screen and (min-width: 768px) { .home-image { left: 50%; } }
 
 /*# sourceMappingURL=styles.css.map */
