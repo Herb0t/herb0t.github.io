@@ -1,3 +1,38 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
 .current {
     color: green;
+}
+.main-block {
+    display: flex;
+    min-height: 100%;
+    max-width: 1375px;
+    margin: auto;
+
+    .yellow-block {
+        background: #d6fc64;
+        width: 65%;
+        box-shadow: .5rem 0 1rem rgba(0,0,0, 0.10);
+    }
+    .blank-block {
+        width: 30%;
+        position: relative;
+    }
+    .menu-title {
+        font-family: $noto;
+    }
+    .nav-bar {
+        position: absolute;
+        bottom: 0;
+        padding: 3rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .nav {
+        .nav-item {
+            font-family: $source;
+        }
+    }
 }

@@ -3,12 +3,14 @@
 	"file": "styles.css",
 	"sources": [
 		"styles.scss",
+		"_sass/variables.scss",
 		"_sass/main.scss"
 	],
 	"sourcesContent": [
-		"@import \"main\";",
-		".current {\r\n    color: green;\r\n}"
+		"@import \"variables\";\n@import \"main\";",
+		"$noto: 'Noto Sans', sans-serif;\r\n$source: 'Source Sans Pro', sans-serif;",
+		"html, body {\r\n    margin: 0;\r\n    height: 100%;\r\n}\r\n.current {\r\n    color: green;\r\n}\r\n.main-block {\r\n    display: flex;\r\n    min-height: 100%;\r\n    max-width: 1375px;\r\n    margin: auto;\r\n\r\n    .yellow-block {\r\n        background: #d6fc64;\r\n        width: 65%;\r\n        box-shadow: .5rem 0 1rem rgba(0,0,0, 0.10);\r\n    }\r\n    .blank-block {\r\n        width: 30%;\r\n        position: relative;\r\n    }\r\n    .menu-title {\r\n        font-family: $noto;\r\n    }\r\n    .nav-bar {\r\n        position: absolute;\r\n        bottom: 0;\r\n        padding: 3rem;\r\n        width: 100%;\r\n        box-sizing: border-box;\r\n    }\r\n    .nav {\r\n        .nav-item {\r\n            font-family: $source;\r\n        }\r\n    }\r\n}"
 	],
 	"names": [],
-	"mappings": "ACAA,AAAA,QAAQ,CAAC,EACL,KAAK,EAAE,KAAK,GACf"
+	"mappings": "AEAA,AAAA,IAAI,EAAE,IAAI,CAAC,EACP,MAAM,EAAE,CAAC,EACT,MAAM,EAAE,IAAI,GACf;;AACD,AAAA,QAAQ,CAAC,EACL,KAAK,EAAE,KAAK,GACf;;AACD,AAAA,WAAW,CAAC,EACR,OAAO,EAAE,IAAI,EACb,UAAU,EAAE,IAAI,EAChB,SAAS,EAAE,MAAM,EACjB,MAAM,EAAE,IAAI,GA0Bf;;AA9BD,AAMI,WANO,CAMP,aAAa,CAAC,EACV,UAAU,EAAE,OAAO,EACnB,KAAK,EAAE,GAAG,EACV,UAAU,EAAE,MAAK,CAAC,CAAC,CAAC,IAAI,CAAC,kBAAiB,GAC7C;;AAVL,AAWI,WAXO,CAWP,YAAY,CAAC,EACT,KAAK,EAAE,GAAG,EACV,QAAQ,EAAE,QAAQ,GACrB;;AAdL,AAeI,WAfO,CAeP,WAAW,CAAC,EACR,WAAW,EDvBZ,WAAW,EAAE,UAAU,GCwBzB;;AAjBL,AAkBI,WAlBO,CAkBP,QAAQ,CAAC,EACL,QAAQ,EAAE,QAAQ,EAClB,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,IAAI,EACb,KAAK,EAAE,IAAI,EACX,UAAU,EAAE,UAAU,GACzB;;AAxBL,AA0BQ,WA1BG,CAyBP,IAAI,CACA,SAAS,CAAC,EACN,WAAW,EDjCd,iBAAiB,EAAE,UAAU,GCkC7B"
 }

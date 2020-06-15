@@ -3,12 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Source+Sans+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% feed_meta %}
     {% seo %}
   </head>
   <body>
-    {% include navigation.html %}
+    <div class="main-block">
+      <div class="block yellow-block"></div>
+      <div class="block blank-block">
+        <div class="nav-bar">
+          <h2 class="menu-title">Menu</h2>
+          {% include navigation.html %}
+        </div>
+      </div>
+    </div>
     {{ content }}
   </body>
 </html>
