@@ -32,7 +32,7 @@ body { counter-reset: section; }
 
 .main .content-text { display: flex; justify-content: space-between; flex-wrap: wrap; }
 
-.main .content-text > * { width: 27%; box-sizing: border-box; margin: 0; line-height: 2rem; font-size: 1rem; font-family: "Source Sans Pro", sans-serif; }
+.main .content-text > * { width: 100%; box-sizing: border-box; margin: 0; line-height: 2rem; font-size: 1rem; font-family: "Source Sans Pro", sans-serif; text-align: justify; text-justify: inter-word; }
 
 .main .sidebar { position: relative; }
 
@@ -41,6 +41,8 @@ body { counter-reset: section; }
 .main .sidebar .notch.top-notch { height: 4rem; }
 
 .main .sidebar .notch.bot-notch { position: absolute; bottom: 0; height: 2.5rem; }
+
+@media only screen and (min-width: 768px) { .main .content-text > * { width: 30%; } }
 
 @media only screen and (min-width: 1280px) { .main .content { margin: auto; } }
 
