@@ -1,0 +1,60 @@
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    .title {
+        font-family: $noto;
+    }
+    .content {
+        position: relative;
+        display: flex;
+        min-height: 100%;
+        max-width: 1175px;
+        margin-left: 5rem;
+    }
+    .inner-content {
+        width: 90%;
+        padding: 4rem;
+        .header-image {
+            width: 100%;
+        }
+    }
+    .content-text {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & > * {
+            width: 27%;
+            box-sizing: border-box;
+            margin: 0;
+            line-height: 2rem;
+            font-size: 1rem;
+            font-family: $source;
+        }
+    }
+    .sidebar {
+        position: relative;
+        .notch {
+            background: $black1;
+            width: 2rem;
+            &.top-notch {
+                height: 4rem;
+            }
+            &.bot-notch {
+                position: absolute;
+                bottom: 0;
+                height: 2.5rem;
+            }
+        }
+    }
+    @media only screen and (min-width: 1280px) {
+        .content {
+            margin: auto;
+        }
+
+    }
+}

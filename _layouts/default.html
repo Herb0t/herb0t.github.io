@@ -1,14 +1,34 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% feed_meta %}
-    {% seo %}
+    {% include header.html %}
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-bar nav-single">
+      <h2 class="menu-title">Menu</h2>
+      {% include navigation.html %}
+    </div>
+
+    <div class="main main-{{page.class}}"> 
+      <div class="content">
+        <div class="inner-content">
+          <img class="header-image" src="{{ page.imageheader }}" alt="{{ page.imageheaderalt }}" />
+          <h1 class="title">{{ page.title }}</h1>
+          <div class="content-text">
+            {{ content }}
+            <img class="sub-image" src="{{ page.imagesub }}" alt="{{ page.imagesubalt }}" />
+          </div>
+        </div>
+        <div class="sidebar">
+          <div class="notch top-notch"></div>
+          <div class="notch bot-notch"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

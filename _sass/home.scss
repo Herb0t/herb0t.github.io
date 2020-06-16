@@ -1,0 +1,51 @@
+.home-image {
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    max-width: 420px;
+    padding: 1rem;
+    transition: left 1.2s;
+}
+.main-block {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    max-width: 1375px;
+    margin: auto;
+
+    .yellow-block {
+        background: $green1;
+        width: 15%;
+        transition: width 2s;
+        box-shadow: .5rem 0 1rem rgba(35,43,43, 0.10);
+    }
+    .blank-block {
+        width: 30%;
+        position: relative;
+    }
+    .menu-title {
+        font-family: $noto;
+        font-size: 50px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .yellow-block {
+            width: 65%;
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    .home-image {
+        left: 35%;
+    }
+}
+@media only screen and (min-width: 968px) {
+    .home-image {
+        left: 50%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .home-image {
+        max-width: 375px;
+    }
+}
