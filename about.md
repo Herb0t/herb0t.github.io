@@ -2,6 +2,7 @@
 layout: default
 title: About
 cssclass: about
+authorname: Herbert
 imageheader: /assets/images/aboutus.jpg
 imageheaderalt: about us
 ---

@@ -20,7 +20,7 @@ body { counter-reset: section; }
 
 .main { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; overflow-y: scroll; transition: .2s ease; }
 
-.main.open { transform: translateX(30%) scale(0.7); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); }
+.main.open { transform: translateX(45%) scale(0.6); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); }
 
 .main .title { font-family: "Noto Sans", sans-serif; }
 
@@ -42,11 +42,13 @@ body { counter-reset: section; }
 
 .main .sidebar .notch.bot-notch { position: absolute; bottom: 0; height: 2.5rem; }
 
-.main .sidebar .dates { text-align: center; margin-top: 3rem; }
+.main .sidebar .dates { font-family: "Noto Sans", sans-serif; text-align: center; margin-top: 3rem; }
+
+.main .sidebar .author { font-family: "Noto Sans", sans-serif; position: absolute; bottom: 6rem; transform: rotate(90deg); -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); width: 100%; letter-spacing: 2px; }
 
 .main .sub-image { width: 100%; }
 
-@media only screen and (min-width: 768px) { .main .content-text > * { width: 30%; } .main .inner-content { padding: 4rem; } }
+@media only screen and (min-width: 768px) { .main.open { transform: translateX(30%) scale(0.7); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); } .main .content-text > * { width: 30%; } .main .inner-content { padding: 4rem; } }
 
 @media only screen and (min-width: 1280px) { .main .content { margin: auto; } }
 

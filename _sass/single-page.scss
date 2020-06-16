@@ -8,7 +8,7 @@
     overflow-y: scroll;
     transition: .2s ease;
     &.open {
-        transform: translateX(30%) scale(0.7);
+        transform: translateX(45%) scale(0.6);
         box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
     }
     .title {
@@ -59,14 +59,31 @@
             }
         }
         .dates {
+            font-family: $noto;
             text-align: center;
             margin-top: 3rem;
+        }
+        .author {
+            font-family: $noto;
+            position: absolute;
+            bottom: 6rem;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            width: 100%;
+            letter-spacing: 2px;
         }
     }
     .sub-image {
         width: 100%;
     }
     @media only screen and (min-width: 768px) {
+        &.open {
+            transform: translateX(30%) scale(0.7);
+            box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
+        }
         .content-text {
             & > * {
                 width: 30%;
