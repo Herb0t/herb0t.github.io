@@ -10,8 +10,6 @@ body { counter-reset: section; }
 
 .main-block .blank-block { width: 30%; position: relative; }
 
-.main-block .menu-title { font-family: "Noto Sans", sans-serif; font-size: 50px; }
-
 @media only screen and (min-width: 768px) { .main-block .yellow-block { width: 65%; } }
 
 @media only screen and (min-width: 768px) { .home-image { left: 35%; } }
@@ -53,6 +51,8 @@ body { counter-reset: section; }
 @media only screen and (min-width: 1280px) { .main .content { margin: auto; } }
 
 .nav-bar { position: absolute; bottom: 0; padding: 3rem; width: 100%; box-sizing: border-box; }
+
+.nav-bar .menu-title { font-family: "Noto Sans", sans-serif; font-size: 50px; }
 
 .nav-bar.nav-single { max-width: 300px; }
 

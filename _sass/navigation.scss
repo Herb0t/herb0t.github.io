@@ -4,6 +4,10 @@
     padding: 3rem;
     width: 100%;
     box-sizing: border-box;
+    .menu-title {
+        font-family: $noto;
+        font-size: 50px;
+    }
 }
 .nav-bar.nav-single {
     max-width: 300px;
