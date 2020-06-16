@@ -28,6 +28,14 @@
         }
     }
 }
+.default {
+    background: $green1;
+    .nav {
+        .nav-item {
+            border-left: solid $black1 5px;
+        }
+    }
+}
 .hamburger {
     position: fixed;
     left: 1rem;
