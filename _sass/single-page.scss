@@ -6,7 +6,7 @@
     bottom: 0;
     background-color: #ffffff;
     overflow-y: scroll;
-    transition: .2s ease;
+    transition: transform .2s ease;
     &.open {
         transform: translateX(45%) scale(0.6);
         box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
@@ -85,7 +85,7 @@
             box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3);
         }
         .content-text {
-            & > * {
+            & > p {
                 width: 30%;
             }
         }

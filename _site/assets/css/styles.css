@@ -18,7 +18,7 @@ body { counter-reset: section; }
 
 @media only screen and (max-width: 500px) { .home-image { max-width: 375px; } }
 
-.main { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; overflow-y: scroll; transition: .2s ease; }
+.main { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: #ffffff; overflow-y: scroll; transition: transform .2s ease; }
 
 .main.open { transform: translateX(45%) scale(0.6); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); }
 
@@ -48,7 +48,7 @@ body { counter-reset: section; }
 
 .main .sub-image { width: 100%; }
 
-@media only screen and (min-width: 768px) { .main.open { transform: translateX(30%) scale(0.7); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); } .main .content-text > * { width: 30%; } .main .inner-content { padding: 4rem; } }
+@media only screen and (min-width: 768px) { .main.open { transform: translateX(30%) scale(0.7); box-shadow: 0 0 30px 5px rgba(38, 38, 38, 0.3); } .main .content-text > p { width: 30%; } .main .inner-content { padding: 4rem; } }
 
 @media only screen and (min-width: 1280px) { .main .content { margin: auto; } }
 
@@ -73,5 +73,9 @@ body { counter-reset: section; }
 .hamburger { position: fixed; left: 1rem; top: 1rem; width: 1.5rem; height: .7rem; z-index: 100; cursor: pointer; }
 
 .hamburger > span { display: block; background-color: #232b2b; height: 20%; margin-bottom: 20%; }
+
+.blog-list { display: flex; flex-wrap: wrap; justify-content: space-between; }
+
+.blog-list .blog-item { width: 30%; }
 
 /*# sourceMappingURL=styles.css.map */

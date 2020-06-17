@@ -2,8 +2,8 @@
   link: /
   class: home
 - name: About
-  link: /about.html
+  link: /about/
   class: about
 - name: Blog
-  link: /blog.html
+  link: /blog/
   class: blog

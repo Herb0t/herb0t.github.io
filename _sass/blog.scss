@@ -1,0 +1,8 @@
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .blog-item {
+        width: 30%;
+    }
+}
