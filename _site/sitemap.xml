@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2020/06/12/jekyll.html</loc>
-<lastmod>2020-06-12T00:00:00-04:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2020/06/13/jekyll.html</loc>
+<loc>http://localhost:4000/blog/jekyll</loc>
 <lastmod>2020-06-13T00:00:00-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2020/06/14/snakeplant.html</loc>
+<loc>http://localhost:4000/blog/snakeplant</loc>
 <lastmod>2020-06-14T00:00:00-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2020/06/15/sourdoughstater.html</loc>
+<loc>http://localhost:4000/blog/sourdoughstater</loc>
 <lastmod>2020-06-15T00:00:00-04:00</lastmod>
 </url>
 <url>
