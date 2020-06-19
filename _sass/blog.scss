@@ -3,15 +3,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .blog-item {
+        position: relative;
         width: 30%;
         padding: 1rem;
         background: $green1;
         margin: 0 1rem 1.9rem;
         box-sizing: border-box;
-        h2, h2 a{
+        -webkit-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        h2, h2 a {
             text-decoration: none;
             font-family: $noto;
             color: $black1;
+        }
+        .linkoverlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
 }

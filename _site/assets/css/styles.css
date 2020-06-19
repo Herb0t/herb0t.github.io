@@ -76,8 +76,10 @@ body { counter-reset: section; }
 
 .blog-list { display: flex; flex-wrap: wrap; justify-content: space-between; }
 
-.blog-list .blog-item { width: 30%; padding: 1rem; background: #d6fc64; margin: 0 1rem 1.9rem; box-sizing: border-box; }
+.blog-list .blog-item { position: relative; width: 30%; padding: 1rem; background: #d6fc64; margin: 0 1rem 1.9rem; box-sizing: border-box; -webkit-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2); -moz-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2); box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2); }
 
 .blog-list .blog-item h2, .blog-list .blog-item h2 a { text-decoration: none; font-family: "Noto Sans", sans-serif; color: #232b2b; }
+
+.blog-list .blog-item .linkoverlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 
 /*# sourceMappingURL=styles.css.map */
