@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
+import anime from 'animejs/lib/anime.es.js'
 
 import './App.css'
 
 function App() {
-  let wrapper = document.getElementsByClassName("tiles");
+  let wrapper = "";
 
   let columns = 0,
       rows = 0,
@@ -59,7 +60,8 @@ function App() {
     
     columns = Math.floor(document.body.clientWidth / size);
     rows = Math.floor(document.body.clientHeight / size);
-    
+    console.log(columns, rows);
+    console.log(wrapper);
     wrapper.style.setProperty("--columns", columns);
     wrapper.style.setProperty("--rows", rows);
     
@@ -68,6 +70,7 @@ function App() {
 
   // once the page loads create the grid useEffect
   useEffect(() => {
+    wrapper = document.getElementById("tiles");
     createGrid();
   }, []);
 
