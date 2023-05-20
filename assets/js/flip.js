@@ -15,10 +15,10 @@ let columns = 0,
     b2 = ""
     ;
 
-let beginStr = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaWELCOMETO MY  SHOP   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".toUpperCase().split("");
-let endStr = "                            THANK  YOU FORVISITIN                                          ".toUpperCase().split("");
+let beginStr = "                            WELCOMETO MY  SHOP                                             ".toUpperCase().split("");
+let endStr = "                            THANK  YOU FORVISITIN                     shop   about  contact".toUpperCase().split("");
 
-const speed = 0.35; // seconds
+const speed = 0.40; // seconds
 const char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
       'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
       'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ' '];
@@ -136,8 +136,8 @@ const createGrid = () => {
   
   const size = document.body.clientWidth > 800 ? 100 : 50;
   
-  columns = Math.floor(document.body.clientWidth / size);
-  rows = Math.floor(document.body.clientHeight / size);
+  columns = Math.floor(document.body.clientWidth / size) > 7 ? 7 : Math.floor(document.body.clientWidth / size);
+  rows = Math.floor(document.body.clientHeight / size) > 13 ? 13 : Math.floor(document.body.clientHeight / size);
   console.log(columns, rows);
   console.log(wrapper);
   wrapper.style.setProperty("--columns", columns);

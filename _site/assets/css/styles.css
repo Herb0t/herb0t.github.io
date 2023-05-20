@@ -103,7 +103,7 @@ body.toggled > #tiles > .tile:hover {
 }
 
 #tiles {
-  height: 100vh;
+  height: 650px;
   width: 100vw;
   position: relative;
   z-index: 2;
