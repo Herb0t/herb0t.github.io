@@ -50,6 +50,8 @@
     --g2: rgb(236, 64, 122);
     --fliper: rgb(221, 216, 216);
     --text: rgb(69,69,69);
+    --height: 30px;
+    --width: var(--height);    
 }
 
 @keyframes background-pan {
@@ -209,10 +211,10 @@ body.menu-toggled > .meta-link > span {
 /* -- flip -- */
 .splitflap {
   position: relative;
-  max-width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 50px;
+  max-width: var(--width);
+  height: var(--height);
+  line-height: 1em;
+  font-size: var(--height);
   inset: 1.5px;
   margin-bottom: 1.5px;
   font-family: Monospace;

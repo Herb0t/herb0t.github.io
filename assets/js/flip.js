@@ -15,8 +15,8 @@ let columns = 0,
     b2 = ""
     ;
 
-let beginStr = "                            WELCOMETO MY  SHOP                                             ".toUpperCase().split("");
-let endStr = "                            THANK  YOU FORVISITIN                     shop   about  contact".toUpperCase().split("");
+let beginStr = "                            THANK YOU FOR VISITING                     shop   about  contact                                                                                                                                                                                                                                                             ".toUpperCase().split("");
+let endStr = "                          WELCOME     TO MY       SHOP                                                                                                                                                                                                                                                                                                   ".toUpperCase().split("");
 
 const speed = 0.40; // seconds
 const char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
@@ -134,10 +134,12 @@ const createGrid = () => {
 
   wrapper.innerHTML = "";
   
-  const size = document.body.clientWidth > 800 ? 100 : 50;
+  const size = document.body.clientWidth > 800 ? 100 : 30;
   
-  columns = Math.floor(document.body.clientWidth / size) > 7 ? 7 : Math.floor(document.body.clientWidth / size);
-  rows = Math.floor(document.body.clientHeight / size) > 13 ? 13 : Math.floor(document.body.clientHeight / size);
+  // columns = Math.floor(document.body.clientWidth / size);
+  columns = Math.floor(document.body.clientWidth / size) > 12 ? 12 : Math.floor(document.body.clientWidth / size);
+  // rows = Math.floor(document.body.clientHeight / size);
+  rows = Math.floor(document.body.clientHeight / size) > 20 ? 20 : Math.floor(document.body.clientHeight / size);
   console.log(columns, rows);
   console.log(wrapper);
   wrapper.style.setProperty("--columns", columns);
