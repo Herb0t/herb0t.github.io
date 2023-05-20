@@ -63,17 +63,7 @@ to {
 }
 
 body {
-  animation: background-pan 10s linear infinite;
-  background: linear-gradient(
-      to right,
-      var(--g1),
-      var(--g2),
-      var(--g1)
-  );
-  background-size: 200%;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0px;
+
 }
 
 body.toggled {
@@ -100,7 +90,19 @@ body.toggled > #tiles > .tile:hover {
 }
 
 #tiles {
-  height: 650px;
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(
+      to right,
+      var(--g1),
+      var(--g2),
+      var(--g1)
+  );
+  background-size: 200%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+  
+  max-height: 700px;
   width: 100vw;
   position: relative;
   z-index: 2;
