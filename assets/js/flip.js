@@ -18,7 +18,7 @@ let columns = 0,
 let beginStr = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaWELCOMETO MY  SHOP   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".toUpperCase().split("");
 let endStr = "                            THANK  YOU FORVISITIN                                          ".toUpperCase().split("");
 
-const speed = 0.2; // seconds
+const speed = 0.35; // seconds
 const char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
       'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
       'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ' '];
