@@ -7,8 +7,9 @@ type ImgProps = {
 };
 
 const Img: FunctionComponent<ImgProps> = ({ className, file, extention }) => {
-  // check if development or production
-  const isDev = process.env.NODE_ENV === "development";
+  // get the value of development from the environment variable
+  const isDev = process.env.NODE_ENV === "DEVELOPMENT";
+
   // if development, return the image from the local folder
   const imgSrc = isDev ? `./src/assets/${file}.${extention}` : `./assets/${file}.${extention}`;
 
