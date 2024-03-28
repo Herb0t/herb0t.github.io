@@ -1,0 +1,57 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  opacity: 1;
+  padding: 2rem 2rem;
+  background: rgba(map-get($colors, "quinary"), 0.4);
+  // margin-top: -100vh;
+  transition: all 1s ease-in-out;
+
+  .grid-item {
+    transition: all 1s ease-in-out;
+    position: relative;
+  }
+
+  .grid-item-0{
+    display: none;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .grid-item-3 {
+    height: 40vw;
+    background: url('/src/assets/grid-4.jpg') no-repeat center center;
+  }
+
+  .grid-item-1, .grid-item-2, .grid-item-4 {
+    display: none;
+  }
+
+  .grid-item-5 {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    // background: rgba(map-get($colors, "quaternary"), 0.4);
+    & > p {
+      font-family: $font_main;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: left;
+      letter-spacing: 1px;
+      a {
+        text-decoration: none;
+        color: map-get($colors, "tertiary" );
+      }
+    }
+  }
+
+  @include media('>=medium') {
+
+  }
+}

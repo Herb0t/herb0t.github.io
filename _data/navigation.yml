@@ -1,9 +1,0 @@
-- name: Home
-  link: /
-  class: home
-- name: About
-  link: /about/
-  class: about
-- name: Blog
-  link: /blog/
-  class: blog
