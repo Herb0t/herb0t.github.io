@@ -1,7 +1,6 @@
 .grid {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
   position: relative;
   z-index: 100;
@@ -25,8 +24,8 @@
   }
 
   .grid-item-3 {
-    height: 40vw;
-    background: url('/src/assets/grid-4.jpg') no-repeat center center;
+    height: 18rem;
+    background: url('/images/grid-4.jpg') no-repeat center center;
   }
 
   .grid-item-1, .grid-item-2, .grid-item-4 {
@@ -47,6 +46,26 @@
       a {
         text-decoration: none;
         color: map-get($colors, "tertiary" );
+      }
+    }
+
+    .contact {
+      display: flex;
+      justify-content: start;
+      margin-bottom: 1rem;
+    }
+    .mail-link,
+    .ig-link {
+      display: block;
+      width: 40px;
+      margin-right: 0.8rem;
+
+      & > div {
+        padding-top: 40px;
+        background-size: contain;
+        img {
+          display: none;
+        }
       }
     }
   }

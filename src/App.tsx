@@ -77,6 +77,13 @@ const App: React.FC = () => {
     }
   }
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 675,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <>
       <header>
@@ -92,7 +99,7 @@ const App: React.FC = () => {
             <p className='english'>Creator of web things!</p>
             <p className='spanish'>Creador de cosas de internet!</p>
           </Div>
-          <Div className="about-us-background">
+          <Div className="about-us-background" onClick={handleScroll}>
             <h3><span className='english'>About</span><span className="spanish">sobre mí</span></h3>
             <Img className="about-us-image" file="arrows" extention="svg" />
           </Div>
@@ -119,6 +126,14 @@ const App: React.FC = () => {
           <Div className={`card grid-item grid-item-4`}>
           </Div>
           <Div className={`card grid-item grid-item-5`}>
+            <Div className="contact">
+              <a className='mail-link' href='mailto:herbert.a.lemus@gmail.com'>
+              <Img className="mail" file="mail" extention="png" />
+              </a>
+              <a className='ig-link' href='https://www.instagram.com/herbotsartlab/' target='_blank'>
+                <Img className="ig" file="ig" extention="png" />
+              </a>
+            </Div>
             <p className="english">Welcome to a world where simplicity meets style! I specialize in creating minimalistic websites perfect for those taking their first steps into the online realm. Ideal for clients who want a clean and easy-to-navigate online presence. Ensuring your journey to a sleek website is hassle-free from start to finish. Explore the power of minimalistic design and let's craft a website that speaks volumes in its simplicity. For all inquiries, reach out to me at <a href='mailto:herbert.a.lemus@gmail.com'>Herb0t</a>.</p>
             <p className="spanish">¡Bienvenido a un mundo donde la simplicidad se encuentra con el estilo! Me especializo en crear sitios web minimalistas perfectos para aquellos que dan sus primeros pasos en el mundo en línea. Ideal para clientes que desean una presencia en línea limpia y fácil de navegar. Asegurando que su viaje a un sitio web elegante sea sin problemas desde el principio hasta el final. Explore el poder del diseño minimalista y creemos un sitio web que hable mucho en su simplicidad. Para todas las consultas, comuníquese conmigo a <a href='mailto:herbert.a.lemus@gmail.com'>Herb0t</a>.</p>
           </Div>

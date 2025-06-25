@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 /dist
+._.DS_Store
+._.gitignore
 
 # testing
 /coverage
