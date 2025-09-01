@@ -1,144 +1,398 @@
-// import ListTransactions from './components/listTransactions'
-import { Skeleton } from './components/skeleton'
-import { Div } from './components/div'
-import { useEffect, useState } from 'react';
-import { Img } from './components/image';
+import { Box, Grid, Typography } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import { styled } from '@mui/material/styles';
+import { useState, useEffect } from 'react';
+import herb0tImage1 from './assets/herb0t_1.jpg';
+import herb0tImage2 from './assets/herb0t_2.jpg';
+import herb0t from './assets/herb0t.png';
 
-const App: React.FC = () => {
-  // set loading to loaded after 2 seconds
-  const [loading, setLoading] = useState("not-loaded");
-  const [language, setLanguage] = useState("english");
-  // const backgroundImage = [
-  //   { className: "sky", file: "sky", extention: "png"},
-  //   { className: "dslr", file: "dslr", extention: "png"},
-  //   { className: "cn", file: "cn", extention: "png" },
-  //   { className: "church", file: "church",  extention: "png"},
-  //   { className: "cano", file: "cano", extention: "png" },
-  //   { className: "san", file: "san", extention: "png" },
-  //   { className: "bot", file: "bot", extention: "png" },
-  //   { className: "top", file: "top", extention: "png" },
-  //   {
-  //     className: "noir", file: "noir",  extention: "png"
-  //   },
-  //   {
-  //     className: "noir-hand", file: "noir-hand", extention: "png"
-  //   },
-  //   {
-  //     className: "6", file: "6", extention: "png"
-  //   },
-  //   {
-  //     className: "20", file: "20", extention: "png"
-  //   },
-  //   {
-  //     className: "99", file: "99", extention: "png"
-  //   },
-  //   {
-  //     className: "beaMAX", file: "beaMAX", extention: "gif"
-  //   },
-  //   {
-  //     className: "goku", file: "goku", extention: "png"
-  //   },
-  //   {
-  //     className: "lion", file: "lion", extention: "png"
-  //   },
-  //   {
-  //     className: "momo", file: "momo", extention: "png"
-  //   },
-  //   {
-  //     className: "roxxx", file: "roxxx", extention: "png"
-  //   },
-  //   {
-  //     className: "sonic", file: "sonic", extention: "gif"
-  //   },
-  //   {
-  //     className: "tmnt", file: "tmnt", extention: "png"
-  //   },
-  //   {
-  //     className: "vega", file: "vega", extention: "gif"
-  //   },
-  //   {
-  //     className: "whale", file: "whale", extention: "png"
-  //   },
-  // ];
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ED1C24',
+    },
+    secondary: {
+      main: '#fffff8',
+      dark: '#faf9e9',
+      contrastText: '#000000',
+    },
+  },
+});
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      // set loading to loaded
-      setLoading("loaded");
-    }, 3500);
-    return () => clearTimeout(timer); // This will clear the timer when the component unmounts.
-  }, []); // Removed 'loading' from the dependency array to prevent infinite loop
+const GridVH = styled(Grid)(({ theme }) => ({
+  minHeight: '100vh',
+  maxHeight: '100vh',
+  width: '100vw',
+  display: 'flex',
+  flexDirection: 'column', // Change to row for side-by-side layout
+  overflow: 'hidden',
+  justifyContent: 'space-between',
+  // backgroundColor: theme.palette.background.default
+}));
 
-  const handleLanguage = (e: any) => {
-    if (e.target.textContent === "EN") {
-      setLanguage("english");
-    } else if (e.target.textContent === "ES") {
-      setLanguage("spanish");
+const MenuGrid = styled(Grid)(({ theme }) => ({
+  // Styles for the MenuGrid component
+  padding: '1rem 0',
+  display: 'flex',
+  alignItems: 'center',
+  textAlign: 'center',
+  position: 'fixed',
+  width: '100%',
+  paddingLeft: '1rem',
+  zIndex: 1000,
+}));
+
+const TypeGrid = styled(Typography)(({ theme }) => ({
+  // Styles for the TypeGrid component
+  fontFamily: '"Fira Code", monospace',
+  fontWeight: 400,
+  lineHeight: 1.5,
+  textAlign: 'center',
+}));
+
+// Sample project data - replace with your actual projects
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+  {
+    title: "Task Management App", 
+    description: "A collaborative task management application with real-time updates using Socket.io. Built with TypeScript and Express.",
+    technologies: ["TypeScript", "Express", "Socket.io", "PostgreSQL"],
+    liveUrl: "https://example-tasks.com",
+    image: herb0tImage2
+  },
+  {
+    title: "Weather Dashboard",
+    description: "A responsive weather dashboard that displays current conditions and forecasts using OpenWeather API.",
+    technologies: ["React", "Weather API", "Chart.js", "CSS Grid"],
+    liveUrl: "https://example-weather.com", 
+    image: herb0tImage1
+  },
+      {
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+  {
+    title: "Task Management App", 
+    description: "A collaborative task management application with real-time updates using Socket.io. Built with TypeScript and Express.",
+    technologies: ["TypeScript", "Express", "Socket.io", "PostgreSQL"],
+    liveUrl: "https://example-tasks.com",
+    image: herb0tImage2
+  },
+  {
+    title: "Weather Dashboard",
+    description: "A responsive weather dashboard that displays current conditions and forecasts using OpenWeather API.",
+    technologies: ["React", "Weather API", "Chart.js", "CSS Grid"],
+    liveUrl: "https://example-weather.com", 
+    image: herb0tImage1
+  },
+  {
+    title: "Future Project",
+    description: "A description for the future project.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+  {
+    title: "Future Project",
+    description: "A description for the future project.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+  {
+    title: "Future Project",
+    description: "A description for the future project.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+  {
+    title: "Future Project",
+    description: "A description for the future project.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    image: herb0tImage1 // You can add specific project images later
+  },
+];
+
+function App() {
+  const images = [herb0tImage1, herb0tImage2];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [hidden, setHidden] = useState(true);
+  const [titleType, setTitleType] = useState<'2rem' | '5.5rem'>('2rem');
+  const [imageWidth, setImageWidth] = useState<'55%' | '80%'>('55%');
+  const [imageMovement, setImageMovement] = useState<'0' | '-4rem'>('0');
+  const [selectedProject, setSelectedProject] = useState(0);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  //   }, 10000); // Change image every 5 secondshttp://localhost:9090/
+
+  //   return () => clearInterval(interval); // Cleanup interval on component unmount
+  // }, [images.length]);
+
+  const handleTransition = () => {
+    setHidden(!hidden);
+    setTitleType(hidden ? '5.5rem' : '2rem');
+    setImageWidth(hidden ? '80%' : '55%');
+    setImageMovement(hidden ? '-4rem' : '0'); 
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
-
-  const handleScroll = () => {
-    window.scrollTo({
-      top: 675,
-      behavior: 'smooth'
-    });
-  }
+  };
 
   return (
     <>
-      <header>
-      </header>
-      <main className={language}>
-        <Div className="lang" >
-          <div className='eng' onClick={handleLanguage}>EN</div>
-          <div className='span' onClick={handleLanguage}>ES</div>
-        </Div>
-        <Div className={`background ${loading}`} >
-          <Div className="background-item title">
-            <h1><span>Her</span><span>b0t</span></h1>
-            <p className='english'>Creator of web things!</p>
-            <p className='spanish'>Creador de cosas de internet!</p>
-          </Div>
-          <Div className="about-us-background" onClick={handleScroll}>
-            <h3><span className='english'>About</span><span className="spanish">sobre mí</span></h3>
-            <Img className="about-us-image" file="arrows" extention="svg" />
-          </Div>
-          {/* {backgroundImage.map((image, index) => {
-            return (
-              <Img key={index} className={`background-item ${image.className}`} file={image.file} extention={image.extention} />
-            )
-          })} */}
-        </Div>
-        <Div className={`grid ${loading}`} >
-          <Div className={`card grid-item grid-item-0`}>
-            <h1>Herb0t</h1>
-          </Div>
-          <Div className={`card grid-item grid-item-1`}>
-          </Div>
-          <Div className={`card grid-item grid-item-2`}>
-            <Skeleton className="h-3 w-75-p" />
-            <Skeleton className="h-2 w-70-p" />
-            <Skeleton className="h-2 w-60-p" />
-            <Skeleton className="h-2 w-10-p" />
-          </Div>
-          <Div className={`card grid-item grid-item-3`}>
-          </Div>
-          <Div className={`card grid-item grid-item-4`}>
-          </Div>
-          <Div className={`card grid-item grid-item-5`}>
-            <Div className="contact">
-              <a className='mail-link' href='mailto:herbert.a.lemus@gmail.com'>
-              <Img className="mail" file="mail" extention="png" />
-              </a>
-              <a className='ig-link' href='https://www.instagram.com/herbotsartlab/' target='_blank'>
-                <Img className="ig" file="ig" extention="png" />
-              </a>
-            </Div>
-            <p className="english">Welcome to a world where simplicity meets style! I specialize in creating minimalistic websites perfect for those taking their first steps into the online realm. Ideal for clients who want a clean and easy-to-navigate online presence. Ensuring your journey to a sleek website is hassle-free from start to finish. Explore the power of minimalistic design and let's craft a website that speaks volumes in its simplicity. For all inquiries, reach out to me at <a href='mailto:herbert.a.lemus@gmail.com'>Herb0t</a>.</p>
-            <p className="spanish">¡Bienvenido a un mundo donde la simplicidad se encuentra con el estilo! Me especializo en crear sitios web minimalistas perfectos para aquellos que dan sus primeros pasos en el mundo en línea. Ideal para clientes que desean una presencia en línea limpia y fácil de navegar. Asegurando que su viaje a un sitio web elegante sea sin problemas desde el principio hasta el final. Explore el poder del diseño minimalista y creemos un sitio web que hable mucho en su simplicidad. Para todas las consultas, comuníquese conmigo a <a href='mailto:herbert.a.lemus@gmail.com'>Herb0t</a>.</p>
-          </Div>
-        </Div>
-      </main>
+      <MenuGrid>
+        <Box sx={{ display: 'flex'}}>
+          <Typography sx={{ minWidth: 100 }} onClick={() => {scrollToSection('past-works')}}>Past Works</Typography>
+          <Typography sx={{ minWidth: 100 }} onClick={() => {scrollToSection('contact')}}>Contact</Typography>
+        </Box>
+        <Box sx={{ 
+          flexGrow: 1,
+          backgroundImage: `url(${herb0t})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right',
+          height: '50px',
+          width: '50px',
+          marginRight: '1rem',
+        }} onClick={() => {scrollToSection('profile')}}/>
+      </MenuGrid>
+      <GridVH spacing={2} id='profile'>
+        <Grid sx={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'flex-end',
+          flexDirection: 'column',
+          minHeight: '50vh',
+        }}>
+          <TypeGrid sx={{transition: 'all 0.25s', fontSize: titleType}} >Herb0t</TypeGrid>
+          <TypeGrid sx={{ opacity: hidden ? 0 : 1, transition: 'opacity 0.25s' }}>Your friendly neighborhood<br />Full Stack Developer</TypeGrid>
+        </Grid>
+        <Grid
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            minHeight: '50vh',
+          }}
+        >
+          <Box
+            sx={{
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: imageWidth,
+              border: '3px solid #ccc',
+              padding: '1.5rem',
+              position: 'relative',
+              bottom: imageMovement,
+              transition: 'width 0.25s, bottom 0.25s',
+            }}
+          >
+            <Box
+              sx={{
+                backgroundImage: `url(${images[currentImageIndex]})`,
+                backgroundSize: '100%',
+                backgroundPosition: '50% 50%',
+                backgroundRepeat: 'no-repeat',
+                paddingTop: '100%',
+                width: '100%',
+                borderRadius: '50%',
+                overflow: 'hidden',
+              }}
+            >
+              {imageWidth === '80%' && (
+                <RemoveCircleIcon sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
+                  fontSize: '2rem',
+                  color: '#ED1C24',
+                  position: 'absolute',
+                  left: '16%',
+                  top: '4.5%',
+                }} onClick={handleTransition} />
+              )}
+            {imageWidth === '55%' && (
+              <AddCircleIcon sx={{
+                backgroundColor: 'white',
+                borderRadius: '50%',
+                fontSize: '2rem', 
+                color: '#ED1C24',
+                position: 'absolute',
+                left: '16%',
+                top: '2%',
+                }} onClick={handleTransition} />
+              )}
+            </Box>
+          </Box>
+        </Grid>
+      </GridVH>
+      <GridVH spacing={2} id='past-works'>
+        <Grid sx={{ 
+          display: 'flex', 
+          flexDirection: 'column',
+          alignItems: 'center', 
+          justifyContent: 'center',
+          padding: '2rem',
+          paddingTop: '82px',
+          maxHeight: '69vh',
+        }}>
+          <Typography variant="h4" sx={{ mb: 3, fontFamily: '"Fira Code", monospace' }}>
+            {projects[selectedProject].title}
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2, textAlign: 'center', maxWidth: '80%' }}>
+            {projects[selectedProject].description}
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
+            {projects[selectedProject].technologies.map((tech, index) => (
+              <Box 
+                key={index}
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  color: 'white',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '1rem',
+                  fontSize: '0.8rem'
+                }}
+              >
+                {tech}
+              </Box>
+            ))}
+          </Box>
+        </Grid>
+
+        {/* View-Master Reel Effect */}
+        <Grid sx={{ 
+          display: 'flex', 
+          alignItems: 'flex-start', 
+          justifyContent: 'center',
+          position: 'relative',
+          maxHeight: '31vh',
+          overflow: 'hidden'
+        }}>
+          {/* Main View-Master Reel */}
+          <Box sx={{
+            width: '350px',
+            height: '350px',
+            backgroundColor: theme.palette.secondary.main,
+            borderRadius: '50%',
+            position: 'relative',
+            boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
+            border: `4px solid ${theme.palette.secondary.dark}`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            {/* Center Brand/Logo Area */}
+            <Box sx={{
+              width: '150px',
+              height: '150px',
+              backgroundColor: theme.palette.primary.main,
+              borderRadius: '50%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              color: 'white',
+              fontSize: '0.8rem',
+              textAlign: 'center',
+              fontFamily: '"Fira Code", monospace'
+            }}>
+              <Typography variant="h6" sx={{ fontSize: '1rem', fontWeight: 'bold', marginTop: '2.25rem' }}>
+                Herb0t
+              </Typography>
+              <Typography variant="caption" sx={{ fontSize: '0.7rem' }}>
+                Past Works - Since 2013
+              </Typography>
+            </Box>
+
+            {/* Project Windows arranged in circle */}
+            {projects.map((project, index) => {
+              const offset = -90;
+              const angle = (index * 360) / projects.length + offset;
+              const radius = 125; // Distance from center
+              const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
+              const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
+              
+              return (
+                <Box
+                  key={index}
+                  sx={{
+                    position: 'absolute',
+                    left: `calc(50% + ${x}px - 17.5px)`,
+                    top: `calc(50% + ${y}px - 22.5px)`,
+                    width: '35px',
+                    height: '45px',
+                    borderRadius: '8px',
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    transform: `rotate(${angle}deg)`,
+                    cursor: 'pointer',
+                    border: selectedProject === index ? '3px solid #ED1C24' : '2px solid #fff',
+                    boxShadow: selectedProject === index 
+                      ? '0 0 15px rgba(237, 28, 36, 0.6)' 
+                      : '0 2px 8px rgba(0,0,0,0.3)',
+                    transition: 'all 0.25s',
+                    '&:hover': {
+                      transform: 'rotate(${angle}deg) scale(1.2)',
+                      boxShadow: '0 4px 16px rgba(237, 28, 36, 0.4)'
+                    }
+                  }}
+                  onClick={() => setSelectedProject(index)}
+                />
+              );
+            })}
+
+            {/* White positioning marks around the edge */}
+            {[0, 1, 2, 3, 4, 5, 6].map((mark) => {
+              const offset = 24;
+              const angle = (mark * 51.42857) + offset;
+              const radius = 160;
+              const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
+              const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
+              
+              return (
+                <Box
+                  key={mark}
+                  sx={{
+                    position: 'absolute',
+                    left: `calc(50% + ${x}px - 3px)`,
+                    top: `calc(50% + ${y}px - 8px)`,
+                    width: '6px',
+                    height: '16px',
+                    transform: `rotate(${angle}deg)`,
+                    backgroundColor: 'black',
+                    borderRadius: '2px',
+                  }}
+                />
+              );
+            })}
+          </Box>
+        </Grid>
+      </GridVH>
+      <GridVH spacing={2} id='contact'>
+        <Typography>Contact us here.</Typography>
+      </GridVH>
     </>
   )
 }
