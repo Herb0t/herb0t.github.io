@@ -134,13 +134,15 @@ function App() {
   const [imageWidth, setImageWidth] = useState<'55%' | '80%'>('55%');
   const [imageMovement, setImageMovement] = useState<'0' | '-4rem'>('0');
   const [selectedProject, setSelectedProject] = useState(0);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  //   }, 10000); // Change image every 5 secondshttp://localhost:9090/
 
-  //   return () => clearInterval(interval); // Cleanup interval on component unmount
-  // }, [images.length]);
+  // trigger the change every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleTransition();
+    }, 10000); // Change image every 10 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [hidden]);
 
   const handleTransition = () => {
     setHidden(!hidden);
