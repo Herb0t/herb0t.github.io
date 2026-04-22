@@ -21,7 +21,7 @@ const theme = createTheme({
       },
 });
 
-const GridVH = styled(Grid)(({ theme }) => ({
+const GridVH = styled(Grid)(() => ({
       minHeight: "100vh",
       maxHeight: "100vh",
       width: "100vw",
@@ -32,7 +32,7 @@ const GridVH = styled(Grid)(({ theme }) => ({
       // backgroundColor: theme.palette.background.default
 }));
 
-const MenuGrid = styled(Grid)(({ theme }) => ({
+const MenuGrid = styled(Grid)(() => ({
       // Styles for the MenuGrid component
       padding: "1rem 0",
       display: "flex",
@@ -44,7 +44,7 @@ const MenuGrid = styled(Grid)(({ theme }) => ({
       zIndex: 1000,
 }));
 
-const TypeGrid = styled(Typography)(({ theme }) => ({
+const TypeGrid = styled(Typography)(() => ({
       // Styles for the TypeGrid component
       fontFamily: '"Fira Code", monospace',
       fontWeight: 400,
@@ -131,7 +131,7 @@ const projects = [
 
 function App() {
       const images = [herb0tImage1, herb0tImage2];
-      const [currentImageIndex, setCurrentImageIndex] = useState(0);
+      const currentImageIndex = 0;
       const [hidden, setHidden] = useState(true);
       const [titleType, setTitleType] = useState<"2rem" | "5.5rem">("2rem");
       const [imageWidth, setImageWidth] = useState<"55%" | "80%">("55%");
